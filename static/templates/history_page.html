@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main">
+    <h1 id="history">История</h1>
+
+    {% for file in files %}
+        <a class="history-link" href="{{ file[0] }}" download>{{ file[1] }}</a>
+    {% endfor %}
+</div>
+{% endblock %}

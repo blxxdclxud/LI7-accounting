@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main">
+    <h1 id="settings">Настройки</h1>
+
+    <nav class="settings-nav">
+        <ul>
+            <li><a href="#sender"> Эл.почта отправителя </a></li>
+            <li><a href="#receipt"> Параметры отправителя </a></li>
+            <li><a href="#emails"> Эл.почты получателей </a></li>
+        </ul>
+
+    </nav>
+
+    <form action="" method="post" id="sender" enctype="multipart/form-data">
+        {{ sender_form.hidden_tag() }}
+
+        {% for i in sender_form%}
+        {% if i.name != "submit" and i.name != "csrf_token" %}
+        <p>
+            {{ i.label(class="helper") }}<br>
+            {{ i(placeholder=placeholder) }}<br>
+            {% for error in i.errors %}
+        <p class="error_msg" role="alert">
+            {% if error == "This field is required." %}
+            Это поле обязательно.
+        {% endif %}
+        </p>
+        {% endfor %}
+        </p>
+        {% endif %}
+        {% endfor %}
+
+        <p>{{ sender_form.submit(type="submit", class="submit settings-submit") }}</p>
+    </form>
+    <p>Выберите файл Excel, с которого нужно выгрузить настройки</p>
+    <form action="" method="post" id="receipt" enctype="multipart/form-data">
+        {{ receipt_form.hidden_tag() }}
+
+        {% for i in receipt_form%}
+        {% if i.name != "submit" and i.name != "csrf_token" %}
+        <p>
+            {{ i.label }}<br>
+            {{ i(id="file-settings") }}<br>
+            <label class="uploader" for="file-settings">
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+                <span class="text" id="filename-settings">Выберите файл Excel</span>
+            </label>
+            {% for error in i.errors %}
+        <p class="error_msg" role="alert">
+        {% if error == "This field is required." %}
+            Это поле обязательно.
+        {% endif %}
+        </p>
+        {% endfor %}
+        </p>
+        {% endif %}
+        {% endfor %}
+
+        <p>{{ receipt_form.submit(type="submit", class="submit") }}</p>
+    </form>
+    <p class="error_msg">{{ error_msg }}</p>
+
+    <p class="helper">Выберите файл Excel, с которого нужно выгрузить эл.почты получателей</p>
+    <form action="" method="post" id="emails" enctype="multipart/form-data">
+        {{ receipt_form.hidden_tag() }}
+
+        {% for i in emails_form%}
+        {% if i.name != "submit" and i.name != "csrf_token" %}
+        <p>
+            {{ i.label }}<br>
+            {{ i(id="file-emails") }}<br>
+            <label class="uploader" for="file-emails">
+                <ion-icon name="cloud-upload-outline"></ion-icon>
+                <span class="text" id="filename-emails">Выберите файл Excel</span>
+            </label>
+            {% for error in i.errors %}
+        <p class="error_msg" role="alert">
+        {% if error == "This field is required." %}
+            Это поле обязательно.
+        {% endif %}
+        </p>
+        {% endfor %}
+        </p>
+        {% endif %}
+        {% endfor %}
+
+        <p>{{ emails_form.submit(type="submit", class="submit") }}</p>
+    </form>
+    <p class="error_msg">{{ error_msg }}</p>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#file-settings').on('change', function (e) {
+            $(document).find("#filename-settings").html(e.target.files[0].name);
+        });
+        $('#file-emails').on('change', function (e) {
+            $(document).find("#filename-emails").html(e.target.files[0].name);
+        });
+    </script>
+</div>
+{% endblock %}
