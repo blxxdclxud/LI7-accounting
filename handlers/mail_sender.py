@@ -4,14 +4,13 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import mimetypes
+import initialization as ini
 
 from dotenv import load_dotenv
 
 
 async def send_email(email, subject, text, attachments, server=None):
-    load_dotenv()
-
-    _from = os.getenv("FROM")
+    _from = ini.var_data["FROM"]
 
     msg = MIMEMultipart()
     msg['From'] = _from

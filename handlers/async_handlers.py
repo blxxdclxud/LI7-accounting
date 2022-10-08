@@ -3,21 +3,21 @@ import time
 import os
 import aiosmtplib
 
+import initialization as ini
+
 from handlers.form_files import fill_and_send_personal_receipts
 from handlers.get_data_from_files import parse_payers, parse_emails
-
-from dotenv import load_dotenv
-
-load_dotenv()
 
 
 async def load_data(data, emails, qr_pattern):
     tasks = []
 
-    _from = os.getenv("FROM")
-    host = os.getenv("EMAIL_HOST")
-    port = os.getenv("EMAIL_PORT")
-    password = os.getenv("PASSWORD")
+    _var_data = ini.var_data
+
+    _from = _var_data["FROM"]
+    host = _var_data["EMAIL_HOST"]
+    port = _var_data["EMAIL_PORT"]
+    password = _var_data["PASSWORD"]
     # st = time.time()
     # print(host, port)
     server = aiosmtplib.SMTP(hostname=host, port=port, use_tls=True)

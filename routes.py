@@ -1,5 +1,6 @@
 import json
 import aiosmtplib.errors
+import initialization as ini
 
 from flask import Flask, app, render_template, redirect, abort
 import os
@@ -15,8 +16,6 @@ from handlers.async_handlers import start_sending_process
 
 app = Flask(__name__, template_folder=os.path.abspath('./static/templates'))
 app.config['SECRET_KEY'] = 'LI7-accounting__'
-
-load_dotenv()
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -152,14 +151,11 @@ def settings_page():
         else:
             _settings.sender_email = sender_form.email.data
 
-        _pswrd = os.getenv("PASSWORD")
-        with open(".env", "w") as f:
-            f.write("PORT=8000\n")
-            f.write("HOST=localhost\n")
-            f.write("EMAIL_HOST=smtp.yandex.ru\n")
-            f.write("EMAIL_PORT=465\n")
-            f.write("FROM=" + sender_form.email.data + "\n")
-            f.write("PASSWORD=" + _pswrd)
+        _pswrd = ini.var_data["PASSWORD"]
+        _var_data = ini.var_data
+
+        _var_data["FROM"] = sender_form.email.data
+        ini.write_file(_var_data)
 
         db_sess.add(_settings)
         db_sess.commit()
@@ -191,7 +187,8 @@ def main():
     if not os.path.exists(db_directory):
         os.mkdir(db_directory)
     db_session.global_init("database/accounting.db")
-    port = os.getenv("PORT")
-    host = os.getenv("HOST")
-    app.debug = True
+
+    port = ini.var_data["PORT"]
+    host = ini.var_data["HOST"]
+    app.debug = False
     app.run(host=host, port=port)
