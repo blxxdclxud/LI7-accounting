@@ -36,19 +36,17 @@ def make_qr(qr_data):
     qr = qrcode.QRCode(border=1, box_size=4)
     qr.add_data(qr_data)
     img = qr.make_image(fill_color="black", back_color="white")
-    img.save(FILES_PATH + r"\qr_code.png")
+    img.save(FILES_PATH + "qr_code.png")
 
 
 def make_qr_data(qr_pattern, data):
     data_list = qr_pattern.split('~')
     for idx in range(len(data_list[:-1])):
-        if idx == 4:
-            if '.' not in str(data[idx]) or ',' not in str(data[idx]):
-                data_list[idx] += str(data[idx]).strip() + "00"
+        if idx == 5:
+            if '.' not in str(data[7]) and ',' not in str(data[7]):
+                data_list[idx] += str(data[7]).strip() + "00"
             else:
-                data_list[idx] += str(data[idx]).strip().replace('.', '').replace(',', '')
-        elif idx == 3:
-            data_list[idx] += get_date(str(data[idx]).strip(), mode='receipt')
+                data_list[idx] += str(data[7]).strip().replace('.', '').replace(',', '')
         else:
             data_list[idx] += str(data[idx]).strip().upper()
 

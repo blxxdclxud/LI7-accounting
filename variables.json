@@ -1,8 +1,1 @@
-{
-  "PORT": 8000,
-  "HOST": "localhost",
-  "EMAIL_HOST": "smtp.gmail.com",
-  "EMAIL_PORT": 465,
-  "FROM": "",
-  "PASSWORD": ""
-}
+{"PORT": 8000, "HOST": "192.168.3.139", "EMAIL_HOST": "smtp.yandex.ru", "EMAIL_PORT": 465, "FROM": "buhgalteria.litsey7@yandex.ru", "PASSWORD": "ffstwvcihnapzfvp"}

@@ -1,3 +1,4 @@
+import sys
 import asyncio
 import time
 import os
@@ -26,15 +27,18 @@ async def load_data(data, emails, qr_pattern):
     # et = time.time()
     # print(et - st)
     print(data[0][0])
+#    print(emails)
     for idx in range(len(data)):
-        task = asyncio.create_task(fill_and_send_personal_receipts([data[idx]], qr_pattern, server, emails[data[idx][0]], num=idx))
+        print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+        task = asyncio.create_task(fill_and_send_personal_receipts([data[idx]], qr_pattern, server, emails[data[idx][1].strip()], num=idx))
         tasks.append(task)
 
     await asyncio.gather(*tasks)
     await server.quit()
 
 
-asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 loop = asyncio.get_event_loop()
 
 

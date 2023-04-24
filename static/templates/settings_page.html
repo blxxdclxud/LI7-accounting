@@ -6,14 +6,14 @@
 
     <nav class="settings-nav">
         <ul>
-            <li><a href="#sender"> Эл.почта отправителя </a></li>
-            <li><a href="#receipt"> Параметры отправителя </a></li>
+<!--             <li><a href="#sender"> Эл.почта отправителя </a></li> -->
+<!--            <li><a href="#receipt"> Параметры отправителя </a></li>  -->
             <li><a href="#emails"> Эл.почты получателей </a></li>
         </ul>
 
     </nav>
 
-    <form action="" method="post" id="sender" enctype="multipart/form-data">
+<!--     <form action="" method="post" id="sender" enctype="multipart/form-data"
         {{ sender_form.hidden_tag() }}
 
         {% for i in sender_form%}
@@ -33,9 +33,10 @@
         {% endfor %}
 
         <p>{{ sender_form.submit(type="submit", class="submit settings-submit") }}</p>
-    </form>
-    <p>Выберите файл Excel, с которого нужно выгрузить настройки</p>
-    <form action="" method="post" id="receipt" enctype="multipart/form-data">
+    </form> -->
+
+<!--    <p>Выберите файл Excel, с которого нужно выгрузить настройки</p>
+        <form action="" method="post" id="receipt" enctype="multipart/form-data">
         {{ receipt_form.hidden_tag() }}
 
         {% for i in receipt_form%}
@@ -61,6 +62,7 @@
         <p>{{ receipt_form.submit(type="submit", class="submit") }}</p>
     </form>
     <p class="error_msg">{{ error_msg }}</p>
+    <p style="color: var(--btnpressclr)">{{ success_msg_settings }}</p> -->
 
     <p class="helper">Выберите файл Excel, с которого нужно выгрузить эл.почты получателей</p>
     <form action="" method="post" id="emails" enctype="multipart/form-data">
@@ -89,6 +91,7 @@
         <p>{{ emails_form.submit(type="submit", class="submit") }}</p>
     </form>
     <p class="error_msg">{{ error_msg }}</p>
+    <p style="color: var(--btnpressclr)">{{ success_msg_emails }}</p>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>

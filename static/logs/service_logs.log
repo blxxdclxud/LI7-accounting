@@ -1,0 +1,1667 @@
+werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.3.139:8000
+werkzeug - INFO - [33mPress CTRL+C to quit[0m
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:06] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:06] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:06] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:06] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+root - ERROR - 'Worksheet Настройки does not exist.'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 43, in main_page
+    file_data_in_dict = parse_settings(file_data)
+  File "/home/sender/LI7-accounting/handlers/get_data_from_files.py", line 14, in parse_settings
+    settings_sheet = settings_book['Настройки']
+  File "/home/sender/.local/lib/python3.10/site-packages/openpyxl/workbook/workbook.py", line 288, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet Настройки does not exist.'
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 43, in main_page
+    file_data_in_dict = parse_settings(file_data)
+  File "/home/sender/LI7-accounting/handlers/get_data_from_files.py", line 14, in parse_settings
+    settings_sheet = settings_book['Настройки']
+  File "/home/sender/.local/lib/python3.10/site-packages/openpyxl/workbook/workbook.py", line 288, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet Настройки does not exist.'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 47, in main_page
+    return render_template('settings_page.html', **context)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/templating.py", line 148, in render_template
+    return _render(
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/templating.py", line 128, in _render
+    rv = template.render(context)
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/sender/LI7-accounting/static/templates/settings_page.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/sender/LI7-accounting/static/templates/base.html", line 26, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/sender/LI7-accounting/static/templates/settings_page.html", line 17, in block 'content'
+    {{ sender_form.hidden_tag() }}
+  File "/usr/lib/python3/dist-packages/jinja2/environment.py", line 474, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'sender_form' is undefined
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:16] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:41] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:41] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:41] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:41] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:46] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:46] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:46] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:51] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:51] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:12:51] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:07] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:07] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:07] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.85 - - [04/Apr/2023 07:13:23] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.85 - - [04/Apr/2023 07:13:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.85 - - [04/Apr/2023 07:13:23] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.85 - - [04/Apr/2023 07:13:23] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.85 - - [04/Apr/2023 07:13:23] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.85 - - [04/Apr/2023 07:13:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:29] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:29] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:13:29] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:15:46] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:15:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:15:46] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 07:15:46] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:13] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:14] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:14] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:14] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:24] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:24] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:24] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Worksheet emails does not exist.'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 160, in settings_page
+    file_data_in_dict = parse_emails(file_bytes_data)
+  File "/home/sender/LI7-accounting/handlers/get_data_from_files.py", line 76, in parse_emails
+    sheet = receipt_book['emails']
+  File "/home/sender/.local/lib/python3.10/site-packages/openpyxl/workbook/workbook.py", line 288, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet emails does not exist.'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:45] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:45] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:45] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:52] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:53] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:12:53] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Ахмеев Карим Маратович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Ахмеев Карим Маратович'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:08] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:08] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:08] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:19] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:19] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:19] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:54] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:54] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:13:54] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:01] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:01] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:01] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:06] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:07] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:07] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Ахмеев Карим Маратович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Ахмеев Карим Маратович'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:31] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:31] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:31] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Ахмеев Карим Маратович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Ахмеев Карим Маратович'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:53] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:54] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:14:54] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:50] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:50] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:50] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:58] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:58] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:22:58] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:23:00] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:23:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:23:00] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:23:00] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Ахмеев Карим Маратович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Ахмеев Карим Маратович'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:24:54] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:24:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:24:54] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:24:54] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:26:27] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:26:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:26:27] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:26:27] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:01] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:01] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:01] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:02] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:02] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:02] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:16] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:16] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:27:16] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:16] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:16] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:16] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:16] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:23] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:23] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:23] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:24] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:24] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:24] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Саттаров Рузаль Равилевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Саттаров Рузаль Равилевич'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:45] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:45] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:32:45] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:08] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:08] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:08] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:14] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:14] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:14] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:15] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:15] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:15] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709c636aa0>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:43] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:43] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:43] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:50] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:50] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:37:50] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:09] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:09] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:09] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:09] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:10] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:10] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Гараев Камиль Рустемович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Гараев Камиль Рустемович'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:25] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:25] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:43:25] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:18] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:19] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:19] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:20] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:20] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:20] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:41] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:41] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 14:46:41] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:34] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:34] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:34] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:45] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:45] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:00:45] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:02] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:02] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:02] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:38] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:38] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:01:38] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:21] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:21] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:21] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:52] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:52] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:02:52] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:38] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:39] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:39] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:46] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:46] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:46] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:53] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:53] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:19:53] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:21] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:21] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:21] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:47] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:47] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:20:47] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:29:56] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:29:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:29:56] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:29:56] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:05] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:05] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:05] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:13] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:13] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:13] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:38] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:38] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:38] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Адагамов Нурмухаммед Рафаэлевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Адагамов Нурмухаммед Рафаэлевич'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:59] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:59] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:30:59] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:15] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:15] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:15] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f7096b57970>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:24] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:24] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:31:24] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:35] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:35] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:35] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:53] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:53] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:50:53] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Адагамов Нурмухаммед Рафаэлевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Адагамов Нурмухаммед Рафаэлевич'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:51:13] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:51:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:51:13] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:51:13] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:49] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:49] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:49] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:49] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709c249f60>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:58] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:58] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 15:59:58] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Worksheet emails does not exist.'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 160, in settings_page
+    file_data_in_dict = parse_emails(file_bytes_data)
+  File "/home/sender/LI7-accounting/handlers/get_data_from_files.py", line 76, in parse_emails
+    sheet = receipt_book['emails']
+  File "/home/sender/.local/lib/python3.10/site-packages/openpyxl/workbook/workbook.py", line 288, in __getitem__
+    raise KeyError("Worksheet {0} does not exist.".format(key))
+KeyError: 'Worksheet emails does not exist.'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:37] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:37] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:37] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:54] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:54] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:01:54] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Адагамов Нурмухаммед Рафаэлевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Адагамов Нурмухаммед Рафаэлевич'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:15] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:15] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:15] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:57] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:57] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:02:57] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f7096b83fd0>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:05] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:05] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:05] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:11] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:11] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:11] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Адагамов Нурмухаммед Рафаэлевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Адагамов Нурмухаммед Рафаэлевич'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:25] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:25] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:03:25] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:08] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:09] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:09] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709c3d4eb0>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:17] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:18] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:18] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:20] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:20] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:20] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Адагамов Нурмухаммед Рафаэлевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Адагамов Нурмухаммед Рафаэлевич'
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:52] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:53] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [04/Apr/2023 16:10:53] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 05:58:30] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 05:58:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 05:58:31] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 05:58:31] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 05:58:47] "GET /static/downloaded_files/10%20а%20доп%20_04-04-2023.xlsm HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:06] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:06] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:06] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:06] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709c170490>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:13] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:13] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:13] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:15] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:15] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:15] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Адагамов Нурмухаммед Рафаэлевич'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Адагамов Нурмухаммед Рафаэлевич'
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:31] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:32] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:11:32] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:18:55] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:18:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:18:55] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:18:55] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709da11e40>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:04] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:04] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:04] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:05] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:05] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:05] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+root - ERROR - 'Мусин Айрат Рафаилович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Мусин Айрат Рафаилович'
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:25] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:25] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:19:25] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:34] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:34] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:34] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:43] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:43] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:43] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:45] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:45] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:43:45] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709c17cdc0>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+root - ERROR - 'Мусин Айрат Рафаилович'
+Traceback (most recent call last):
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 32, in load_data
+    print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
+KeyError: 'Мусин Айрат Рафаилович'
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:44:02] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:44:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:44:03] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 06:44:03] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:25] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:25] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:25] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:57] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:57] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:57] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:59] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:59] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:11:59] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+asyncio - ERROR - Fatal error on SSL transport
+protocol: <asyncio.sslproto.SSLProtocol object at 0x7f709c48c190>
+transport: <_SelectorSocketTransport closing fd=15>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 916, in write
+    n = self._sock.send(data)
+OSError: [Errno 9] Bad file descriptor
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/asyncio/sslproto.py", line 690, in _process_write_backlog
+    self._transport.write(chunk)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 922, in write
+    self._fatal_error(exc, 'Fatal write error on socket transport')
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 717, in _fatal_error
+    self._force_close(exc)
+  File "/usr/lib/python3.10/asyncio/selector_events.py", line 729, in _force_close
+    self._loop.call_soon(self._call_connection_lost, exc)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 750, in call_soon
+    self._check_closed()
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 515, in _check_closed
+    raise RuntimeError('Event loop is closed')
+RuntimeError: Event loop is closed
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:12:32] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:12:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:12:32] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 07:12:32] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:05:56] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:05:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:05:56] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:05:56] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:05:56] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:21] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:21] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:21] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:21] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:27] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:27] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:27] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:44] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:44] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:44] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:58] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:58] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [05/Apr/2023 08:09:58] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.2.157 - - [11/Apr/2023 06:24:55] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:50] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:50] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:50] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:51] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:51] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:55] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:55] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [13/Apr/2023 13:59:55] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:24:40] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:24:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:24:40] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:24:40] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:24:40] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:07] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:07] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:07] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:11] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:11] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:11] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:47] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:47] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:25:47] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:00] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:00] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:00] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:39] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:39] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:26:39] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:12] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:12] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:12] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:12] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 97, in fill_and_send_personal_receipts
+    page.mergePage(new_pdf.getPage(0))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 464, in mergePage
+    return self.merge_page(page2)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 455, in merge_page
+    self._merge_page(page2, expand=expand)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 525, in _merge_page
+    page2content = ContentStream(page2content, self.pdf)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1209, in __init__
+    self.__parse_content_stream(stream_bytes)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1239, in __parse_content_stream
+    operands.append(read_object(stream, None, self.forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1346, in read_object
+    return ArrayObject.read_from_stream(stream, pdf, forced_encoding)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 239, in read_from_stream
+    arr.append(read_object(stream, pdf, forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1371, in read_object
+    return NumberObject.read_from_stream(stream)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 393, in read_from_stream
+    return NumberObject(num)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 368, in __new__
+    val = int(value)
+ValueError: invalid literal for int() with base 10: b''
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:33] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:42] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:43] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:43] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:43] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:46] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:46] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:27:46] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:28:31] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:28:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:28:31] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:28:31] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:01] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:01] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:01] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:08] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:08] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:08] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:49] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:49] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:29:49] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:30:26] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:30:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:30:26] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:30:26] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:10] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:10] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:10] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:43] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:44] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:31:44] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:32:18] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:32:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:32:18] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:32:18] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 105, in fill_and_send_personal_receipts
+    await send_email(email, "Квитанция", "Оплата", FILES_PATH + f"dest_{num}.pdf", server)
+  File "/home/sender/LI7-accounting/handlers/mail_sender.py", line 35, in send_email
+    await server.send_message(msg)
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 293, in send_message
+    return await self.sendmail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 179, in sendmail
+    raise exc
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 161, in sendmail
+    await self.mail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/esmtp.py", line 271, in mail
+    raise SMTPSenderRefused(response.code, response.message, sender)
+aiosmtplib.errors.SMTPSenderRefused: (450, '4.2.1 Too many messages from <buhgalteria.litsey7@yandex.ru>. Try again later. 1681457581-mWSL5iCDeeA0-hxWvw6pE', 'buhgalteria.litsey7@yandex.ru')
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:33:01] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:33:24] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:33:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:33:24] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:33:24] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:33:25] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 105, in fill_and_send_personal_receipts
+    await send_email(email, "Квитанция", "Оплата", FILES_PATH + f"dest_{num}.pdf", server)
+  File "/home/sender/LI7-accounting/handlers/mail_sender.py", line 35, in send_email
+    await server.send_message(msg)
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 293, in send_message
+    return await self.sendmail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 179, in sendmail
+    raise exc
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 161, in sendmail
+    await self.mail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/esmtp.py", line 271, in mail
+    raise SMTPSenderRefused(response.code, response.message, sender)
+aiosmtplib.errors.SMTPSenderRefused: (450, '4.2.1 Too many messages from <buhgalteria.litsey7@yandex.ru>. Try again later. 1681457660-5YS9clBWxKo0-0GiJex24', 'buhgalteria.litsey7@yandex.ru')
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:20] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:30] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:30] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:30] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:30] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 105, in fill_and_send_personal_receipts
+    await send_email(email, "Квитанция", "Оплата", FILES_PATH + f"dest_{num}.pdf", server)
+  File "/home/sender/LI7-accounting/handlers/mail_sender.py", line 35, in send_email
+    await server.send_message(msg)
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 293, in send_message
+    return await self.sendmail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 179, in sendmail
+    raise exc
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 161, in sendmail
+    await self.mail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/esmtp.py", line 271, in mail
+    raise SMTPSenderRefused(response.code, response.message, sender)
+aiosmtplib.errors.SMTPSenderRefused: (450, '4.2.1 Too many messages from <buhgalteria.litsey7@yandex.ru>. Try again later. 1681457691-gYSKgfCWt4Y0-PP9AdA9k', 'buhgalteria.litsey7@yandex.ru')
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:34:52] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:35:03] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:35:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:35:03] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:35:03] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:35:03] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 105, in fill_and_send_personal_receipts
+    await send_email(email, "Квитанция", "Оплата", FILES_PATH + f"dest_{num}.pdf", server)
+  File "/home/sender/LI7-accounting/handlers/mail_sender.py", line 35, in send_email
+    await server.send_message(msg)
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 293, in send_message
+    return await self.sendmail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 179, in sendmail
+    raise exc
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/smtp.py", line 161, in sendmail
+    await self.mail(
+  File "/home/sender/.local/lib/python3.10/site-packages/aiosmtplib/esmtp.py", line 271, in mail
+    raise SMTPSenderRefused(response.code, response.message, sender)
+aiosmtplib.errors.SMTPSenderRefused: (450, '4.2.1 Too many messages from <buhgalteria.litsey7@yandex.ru>. Try again later. 1681457735-NZSskUCDaeA0-9Q02xsKr', 'buhgalteria.litsey7@yandex.ru')
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:35:35] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:38:59] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:38:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:38:59] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:38:59] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:38:59] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:39:01] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:39:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:39:01] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:39:01] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.135 - - [14/Apr/2023 07:52:26] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.135 - - [14/Apr/2023 07:52:26] "GET /static/css/styles.css HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.135 - - [14/Apr/2023 07:52:26] "GET /static/css/loading.css HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.135 - - [14/Apr/2023 07:52:26] "GET /static/scripts/script.js HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.135 - - [14/Apr/2023 07:52:26] "GET /static/img/background.png HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.135 - - [14/Apr/2023 07:52:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:08] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:08] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:08] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:08] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:15] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:15] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:15] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:17] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:17] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:17] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:18] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:18] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:18] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:34] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:34] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:34] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:34] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:38] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:38] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:38] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:50] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:50] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:50] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:56] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:56] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:53:56] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:54:35] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:54:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:54:35] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 07:54:35] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 08:02:56] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 08:02:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 08:02:56] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 08:02:56] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:10] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:10] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:10] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:10] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:42] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:42] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:42] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:42] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:45] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:45] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:41:45] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:42:23] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:42:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:42:23] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 11:42:23] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 12:02:01] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 12:02:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 12:02:01] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 12:02:01] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 12:02:01] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:24] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:24] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:24] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:24] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:34] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:34] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:34] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:38] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:38] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [14/Apr/2023 14:37:38] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:03] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:03] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:03] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:03] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:45] "GET /static/downloaded_files/9а%20доп%20_04-04-2023.xlsm HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:53] "GET /documentation HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:53] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:53] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:55:53] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:14] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:14] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:14] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:40] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:40] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:40] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:43] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:43] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:43] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:58] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:58] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [17/Apr/2023 07:56:58] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:07] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:07] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:07] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:07] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:09] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:09] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 07:20:09] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:27] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:27] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:27] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:27] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:40] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:40] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:40] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:40] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:42] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:42] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:08:42] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 97, in fill_and_send_personal_receipts
+    page.mergePage(new_pdf.getPage(0))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 464, in mergePage
+    return self.merge_page(page2)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 455, in merge_page
+    self._merge_page(page2, expand=expand)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 525, in _merge_page
+    page2content = ContentStream(page2content, self.pdf)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1209, in __init__
+    self.__parse_content_stream(stream_bytes)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1239, in __parse_content_stream
+    operands.append(read_object(stream, None, self.forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1346, in read_object
+    return ArrayObject.read_from_stream(stream, pdf, forced_encoding)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 239, in read_from_stream
+    arr.append(read_object(stream, pdf, forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1371, in read_object
+    return NumberObject.read_from_stream(stream)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 393, in read_from_stream
+    return NumberObject(num)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 368, in __new__
+    val = int(value)
+ValueError: invalid literal for int() with base 10: b''
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:37:53] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:08] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:08] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:08] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:08] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:13] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:13] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:13] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:23] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:23] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:23] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:26] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:27] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:39:27] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 97, in fill_and_send_personal_receipts
+    page.mergePage(new_pdf.getPage(0))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 464, in mergePage
+    return self.merge_page(page2)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 455, in merge_page
+    self._merge_page(page2, expand=expand)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 525, in _merge_page
+    page2content = ContentStream(page2content, self.pdf)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1209, in __init__
+    self.__parse_content_stream(stream_bytes)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1239, in __parse_content_stream
+    operands.append(read_object(stream, None, self.forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1346, in read_object
+    return ArrayObject.read_from_stream(stream, pdf, forced_encoding)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 239, in read_from_stream
+    arr.append(read_object(stream, pdf, forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1371, in read_object
+    return NumberObject.read_from_stream(stream)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 393, in read_from_stream
+    return NumberObject(num)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 368, in __new__
+    val = int(value)
+ValueError: invalid literal for int() with base 10: b''
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:01] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:29] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:29] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:29] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:29] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:30] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:30] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:40:30] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:40] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:40] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:40] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:40] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:43] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:43] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:43] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:45] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:45] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:45] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:52] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:52] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:42:52] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:17] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:17] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:17] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:17] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:19] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:19] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:44:19] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:30] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:30] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:30] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:30] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:31] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:31] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:31] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:37] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:38] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:38] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:39] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:39] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:45:39] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 97, in fill_and_send_personal_receipts
+    page.mergePage(new_pdf.getPage(0))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 464, in mergePage
+    return self.merge_page(page2)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 455, in merge_page
+    self._merge_page(page2, expand=expand)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 525, in _merge_page
+    page2content = ContentStream(page2content, self.pdf)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1209, in __init__
+    self.__parse_content_stream(stream_bytes)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1239, in __parse_content_stream
+    operands.append(read_object(stream, None, self.forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1346, in read_object
+    return ArrayObject.read_from_stream(stream, pdf, forced_encoding)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 239, in read_from_stream
+    arr.append(read_object(stream, pdf, forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1371, in read_object
+    return NumberObject.read_from_stream(stream)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 393, in read_from_stream
+    return NumberObject(num)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 368, in __new__
+    val = int(value)
+ValueError: invalid literal for int() with base 10: b''
+werkzeug - INFO - 192.168.3.113 - - [18/Apr/2023 13:46:10] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.43 - - [18/Apr/2023 13:48:52] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.43 - - [18/Apr/2023 13:48:52] "GET /static/css/styles.css HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.43 - - [18/Apr/2023 13:48:52] "GET /static/css/loading.css HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.43 - - [18/Apr/2023 13:48:53] "GET /static/scripts/script.js HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.43 - - [18/Apr/2023 13:48:53] "GET /static/img/background.png HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.43 - - [18/Apr/2023 13:48:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:18:58] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:18:58] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:18:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:18:58] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:18:58] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:18:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:19:02] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:19:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:19:02] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [19/Apr/2023 08:19:02] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:18] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:18] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:18] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:18] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:25] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:25] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:25] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:25] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:27] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:27] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:27] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:37] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:37] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:37] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:40] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:40] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:32:40] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 97, in fill_and_send_personal_receipts
+    page.mergePage(new_pdf.getPage(0))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 464, in mergePage
+    return self.merge_page(page2)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 455, in merge_page
+    self._merge_page(page2, expand=expand)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 525, in _merge_page
+    page2content = ContentStream(page2content, self.pdf)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1209, in __init__
+    self.__parse_content_stream(stream_bytes)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1239, in __parse_content_stream
+    operands.append(read_object(stream, None, self.forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1346, in read_object
+    return ArrayObject.read_from_stream(stream, pdf, forced_encoding)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 239, in read_from_stream
+    arr.append(read_object(stream, pdf, forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1371, in read_object
+    return NumberObject.read_from_stream(stream)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 393, in read_from_stream
+    return NumberObject(num)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 368, in __new__
+    val = int(value)
+ValueError: invalid literal for int() with base 10: b''
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:33:08] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:09] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:09] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:09] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:09] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:10] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:10] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:40:10] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:32] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:32] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:32] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:32] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:43] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:43] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:43] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:55] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:55] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:52:55] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:53:21] "POST / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:53:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:53:21] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:53:21] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:41] "GET /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:41] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:41] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:49] "POST /settings HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:49] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:49] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:52] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:52] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:57:52] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+routes - ERROR - Exception on / [POST]
+Traceback (most recent call last):
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sender/.local/lib/python3.10/site-packages/flask/app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/sender/LI7-accounting/routes.py", line 85, in main_page
+    start_sending_process(file_data, emails_data, settings.qr_pattern)
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 51, in start_sending_process
+    asyncio.run(load_data(payers_data, emails_data, qr_pattern))
+  File "/usr/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "/home/sender/LI7-accounting/handlers/async_handlers.py", line 36, in load_data
+    await asyncio.gather(*tasks)
+  File "/home/sender/LI7-accounting/handlers/form_files.py", line 97, in fill_and_send_personal_receipts
+    page.mergePage(new_pdf.getPage(0))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 464, in mergePage
+    return self.merge_page(page2)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 455, in merge_page
+    self._merge_page(page2, expand=expand)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/_page.py", line 525, in _merge_page
+    page2content = ContentStream(page2content, self.pdf)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1209, in __init__
+    self.__parse_content_stream(stream_bytes)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1239, in __parse_content_stream
+    operands.append(read_object(stream, None, self.forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1346, in read_object
+    return ArrayObject.read_from_stream(stream, pdf, forced_encoding)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 239, in read_from_stream
+    arr.append(read_object(stream, pdf, forced_encoding))
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 1371, in read_object
+    return NumberObject.read_from_stream(stream)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 393, in read_from_stream
+    return NumberObject(num)
+  File "/home/sender/.local/lib/python3.10/site-packages/PyPDF2/generic.py", line 368, in __new__
+    val = int(value)
+ValueError: invalid literal for int() with base 10: b''
+werkzeug - INFO - 192.168.3.113 - - [20/Apr/2023 12:58:11] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:28] "GET / HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:28] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:28] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:28] "[36mGET /static/img/background.png HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:30] "GET /history HTTP/1.1" 200 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:30] "[36mGET /static/css/loading.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 192.168.3.113 - - [24/Apr/2023 08:05:30] "[36mGET /static/scripts/script.js HTTP/1.1[0m" 304 -

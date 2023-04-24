@@ -39,10 +39,12 @@ class Settings(SqlAlchemyBase, SerializerMixin):
                   f'CorrespAcc={data["Корреспондентский счет"]}|' \
                   f'PayeeINN={data["ИНН"]}|' \
                   f'KPP={data["КПП"]}|' \
-                  f'CHILDKOD=~|' \
-                  f'GroupKod=~|' \
+                  f'persAcc=~|' \
                   f'CHILDFIO=~|' \
-                  f'paymPeriod=~|' \
+                  f'Purpose=~|' \
+                  f'CBC=~|' \
+                  f'OKTMO=~|' \
+                  f'LASTNAME=|' \
                   f'Sum=~|' \
                   f'{data["Дополнительные параметры ДШК"]}'
 

@@ -1,3 +1,4 @@
+import logging as lg
 import json
 import aiosmtplib.errors
 import initialization as ini
@@ -14,7 +15,7 @@ from handlers.get_data_from_files import *
 from handlers.form_files import *
 from handlers.async_handlers import start_sending_process
 
-app = Flask(__name__, template_folder=os.path.abspath('./static/templates'))
+app = Flask(__name__, template_folder=ROOT_PATH + 'static/templates')
 app.config['SECRET_KEY'] = 'LI7-accounting__'
 
 
@@ -33,8 +34,29 @@ def main_page():
             return render_template('main_page.html', **context)
 
         file_data = form.file1.data.read()
+        _fn =  os.path.splitext(form.file1.data.filename)[0]
 
         db_sess = db_session.create_session()
+
+        # Обрабатываем лист `Настройки`
+        try:
+            file_data_in_dict = parse_settings(file_data)
+        except KeyError as e:
+            lg.error(e, exc_info=True)
+            context['error_msg'] = "Excel файл не соответствует шаблону"
+            return render_template('settings_page.html', **context)
+
+        _settings = db_sess.query(Settings).filter(Settings.id == 1).first()
+        if not _settings:
+            _settings = Settings(
+                receipt_file=fill_receipt_sender_params(file_data_in_dict)
+            )
+        else:
+            _settings.receipt_file = fill_receipt_sender_params(file_data_in_dict)
+
+        _settings.set_qr_pattern(file_data_in_dict)
+
+        # Обрабатываем лист `Реестр начислений`
         file = File(
             file_name=form.file1.data.filename,
             file=file_data
@@ -43,31 +65,37 @@ def main_page():
         db_sess.add(file)
         db_sess.commit()
 
-        with open(DOWNLOADED_FILES_PATH + rf'\{file.modified_date.strftime("%d-%m-%Y")}.xlsm', 'wb') as f:
+        with open(DOWNLOADED_FILES_PATH + f'{_fn}_{file.modified_date.strftime("%d-%m-%Y")}.xlsm', 'wb') as f:
             f.write(file_data)
 
         settings = db_sess.query(Settings).first()
 
         try:
             emails_data = settings.decode_jwt()
-        except AttributeError:
+        except AttributeError as e:
+            lg.error(e, exc_info=True)
             context['error_msg'] = "Файл с настройками не загружен"
             return render_template('main_page.html', **context)
-        except jwt.exceptions.DecodeError:
+        except jwt.exceptions.DecodeError as e:
+            lg.error(e, exc_info=True)
             context['error_msg'] = "Файл с адресами эл.почт не загружен"
             return render_template('main_page.html', **context)
 
         try:
             start_sending_process(file_data, emails_data, settings.qr_pattern)
-        # except aiosmtplib.errors.SMTPAuthenticationError:
-        #     context['error_msg'] = "Некорректный email"
-        #     from handlers.async_handlers import loop
-        #     loop.close()
-        #     return render_template('main_page.html', **context)
-        except KeyError:
-            context['error_msg'] = "Excel файл не соответствует шаблону"
+        except aiosmtplib.errors.SMTPAuthenticationError as e:
+            lg.error(e, exc_info=True)
+            context['error_msg'] = "Некорректный email"
+            from handlers.async_handlers import loop
+            loop.close()
             return render_template('main_page.html', **context)
-
+        except KeyError as e:
+            lg.error(e, exc_info=True)
+            context['error_msg'] = "Excel файл не соответствует шаблону или данные введены неверно. Проверьте файлы в настройках"
+            return render_template('main_page.html', **context)
+        else:
+            context['success_msg'] = "ГОТОВО!"
+            return render_template('main_page.html', **context)
         return redirect('/')
     return render_template('main_page.html', **context)
 
@@ -100,9 +128,12 @@ def settings_page():
         file_bytes_data = receipt_form.file1.data.read()
         try:
             file_data_in_dict = parse_settings(file_bytes_data)
-        except KeyError:
-            context['error_msg'] = "Excel файл не соответствует шаблону"
+        except KeyError as e:
+            lg.error(e, exc_info=True)
+            context['error_msg'] = "Excel файл не соответствует шаблону или данные введены не верно"
             return render_template('settings_page.html', **context)
+        else:
+            context['success_msg_settings'] = "ГОТОВО!"
 
         db_sess = db_session.create_session()
         _settings = db_sess.query(Settings).filter(Settings.id == 1).first()
@@ -127,9 +158,13 @@ def settings_page():
         file_bytes_data = emails_form.file2.data.read()
         try:
             file_data_in_dict = parse_emails(file_bytes_data)
-        except KeyError:
+            print(file_data_in_dict)
+        except KeyError as e:
+            lg.error(e, exc_info=True)
             context['error_msg'] = "Excel файл не соответствует шаблону"
             return render_template('settings_page.html', **context)
+        else:
+            context['success_msg_emails'] = "ГОТОВО!"
 
         db_sess = db_session.create_session()
         _settings = db_sess.query(Settings).filter(Settings.id == 1).first()
@@ -137,6 +172,7 @@ def settings_page():
             _settings = Settings()
 
         _settings.encode_jwt(file_data_in_dict)
+        print(_settings.emails)
 
         db_sess.add(_settings)
         db_sess.commit()
@@ -170,9 +206,9 @@ def history_page():
         'files': []
     }
 
-    for path in os.listdir('./static/downloaded_files'):
-        context['files'].append((f"/static/downloaded_files/{path}", path))
-
+    for path in os.listdir(DOWNLOADED_FILES_PATH):
+        context['files'].append(("/static/downloaded_files/" + path, path))
+        print(context['files'])
     return render_template('history_page.html', **context)
 
 
@@ -183,10 +219,11 @@ def docs_page():
 
 def main():
     load_dotenv()
-    db_directory = os.path.join(os.getcwd(), r'database')
-    if not os.path.exists(db_directory):
+    lg.basicConfig(filename="/home/sender/LI7-accounting/static/logs/service_logs.log", filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+    db_directory =  'database'
+    if not os.path.exists("/home/sender/LI7-accounting/" + "database"):
         os.mkdir(db_directory)
-    db_session.global_init("database/accounting.db")
+    db_session.global_init(ROOT_PATH + "database/accounting.db")
 
     port = ini.var_data["PORT"]
     host = ini.var_data["HOST"]
