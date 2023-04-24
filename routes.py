@@ -34,7 +34,7 @@ def main_page():
             return render_template('main_page.html', **context)
 
         file_data = form.file1.data.read()
-        _fn =  os.path.splitext(form.file1.data.filename)[0]
+        _fn = os.path.splitext(form.file1.data.filename)[0]
 
         db_sess = db_session.create_session()
 
@@ -43,7 +43,7 @@ def main_page():
             file_data_in_dict = parse_settings(file_data)
         except KeyError as e:
             lg.error(e, exc_info=True)
-            context['error_msg'] = "Excel файл не соответствует шаблону"
+            context['error_msg'] = e.args[0]
             return render_template('settings_page.html', **context)
 
         _settings = db_sess.query(Settings).filter(Settings.id == 1).first()
@@ -91,7 +91,10 @@ def main_page():
             return render_template('main_page.html', **context)
         except KeyError as e:
             lg.error(e, exc_info=True)
-            context['error_msg'] = "Excel файл не соответствует шаблону или данные введены неверно. Проверьте файлы в настройках"
+            context['error_msg'] = e.args[0]
+            return render_template('main_page.html', **context)
+        except Exception:
+            context['error_msg'] = "Произошла неизвестная ошибка. Повторите операцию заново."
             return render_template('main_page.html', **context)
         else:
             context['success_msg'] = "ГОТОВО!"
@@ -161,7 +164,7 @@ def settings_page():
             print(file_data_in_dict)
         except KeyError as e:
             lg.error(e, exc_info=True)
-            context['error_msg'] = "Excel файл не соответствует шаблону"
+            context['error_msg'] = e.args[0]
             return render_template('settings_page.html', **context)
         else:
             context['success_msg_emails'] = "ГОТОВО!"

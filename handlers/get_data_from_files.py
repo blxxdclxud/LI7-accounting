@@ -11,7 +11,10 @@ def parse_settings(data):
     make_file(data, FILES_PATH + "settings.xlsx")
 
     settings_book = openpyxl.load_workbook(FILES_PATH + "settings.xlsx")
-    settings_sheet = settings_book['Настройки']
+    try:
+        settings_sheet = settings_book['Настройки']
+    except KeyError:
+        raise KeyError("В таблицу нет листа 'Настройки'")
     names_values = [v[0].value for v in settings_sheet['A2':'A12']]
     params_values = [v[0].value for v in settings_sheet['B2':'B12']]
 
@@ -42,7 +45,10 @@ def parse_payers(data):
 
     receipt_book = openpyxl.load_workbook(FILES_PATH + "payers.xlsx")
 
-    sheet = receipt_book['Реестр начислений']
+    try:
+        sheet = receipt_book['Реестр начислений']
+    except KeyError:
+        raise KeyError("В таблице нет листа 'Реестр начислений'")
     
     parsed = []
 
@@ -73,7 +79,10 @@ def parse_emails(data):
 
     receipt_book = openpyxl.load_workbook(FILES_PATH + "emails.xlsx")
 
-    sheet = receipt_book['emails']
+    try:
+        sheet = receipt_book['emails']
+    except KeyError:
+        raise KeyError("В таблице нет листа 'emails'")
 
     parsed = {row[0].value.strip(): row[1].value.strip()
               for row in sheet.iter_rows(min_row=2) if None not in (row[0].value, row[1].value)}

@@ -27,10 +27,20 @@ async def load_data(data, emails, qr_pattern):
     # et = time.time()
     # print(et - st)
     print(data[0][0])
-#    print(emails)
+    #    print(emails)
     for idx in range(len(data)):
         print("!!!!!!", data[idx], emails, data[idx][1].strip(), emails[data[idx][1].strip()])
-        task = asyncio.create_task(fill_and_send_personal_receipts([data[idx]], qr_pattern, server, emails[data[idx][1].strip()], num=idx))
+        try:
+            _personal_email = emails[data[idx][1].strip()]
+        except KeyError:
+            raise KeyError(f"Ошибка с эл.почтой у {data[idx][1].strip()}")
+
+        task = asyncio.create_task(fill_and_send_personal_receipts(
+            [data[idx]],
+            qr_pattern,
+            server,
+            _personal_email,
+            num=idx))
         tasks.append(task)
 
     await asyncio.gather(*tasks)
